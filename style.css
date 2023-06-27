@@ -1,0 +1,53 @@
+
+/* Style untuk navigation bar */
+.navbar {
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+  color: #000;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  color: #6c757d;
+}
+
+/* Style untuk section Home */
+#Home {
+  
+  background: linear-gradient(to bottom right, #0a2d4d, #0c4f87, #1475be, #43a8e6, #abd5f3);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+}
+
+.display-2 {
+  font-size: 64px;
+  color: #fff;
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.text-raj {
+  color: #ffc107;
+}
+
+.btn-raj {
+  background-color: #ffc107;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  margin-top: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-raj:hover {
+  background-color: #f6b93b;
+  transform: translateY(-3px);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}

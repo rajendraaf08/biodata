@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>loading page</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+  @media (max-width: 991px) {
+    .nav-about.active ~ .nav-item:first-child {
+      display: none;
+    }
+    .nav-about:not(.active) ~ .nav-item:not(:first-child) {
+      display: none;
+    }
+  }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">for you</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-about" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Quotes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#">Cerita</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section id="Home" class="d-flex align-items-center min-vh-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1 class="display-2 fw-bold">My name is <span class="text-raj">Raj</span> </h1>
+          <h4 class="mb-3 mt-5">seorang mentari yang menerangi sang rembulan</h4>
+          <a href="#Contact" class="btn btn-raj">Get Contact</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="Contact" class="bg-light py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+          <script>
+            $(document).ready(function() {
+              $('a[href^="#Contact"]').on('click', function(event) {
+                var target = $(this).attr('href');
+                if (target.length) {
+                  event.preventDefault();
+                  $('html, body').animate({
+                    scrollTop: $(target).offset().top
+                  }, 1000);
+                }
+              });
+
+              $('a[href^="https://wa.me/088263885345"]').on('click', function(event) {
+                event.preventDefault();
+                window.open($(this).attr('href'), '_blank');
+              });
+
+              // menghapus class "active" dari semua menu navbar
+              $('.nav-item').removeClass('active');
+
+              // ketika menu About di klik
+              $('a.nav-about').on('click', function(event) {
+                event.preventDefault();
+                // menambahkan class "active" pada menu About
+                $(this).addClass('active');
+                // menghapus class "active" dari menu navbar lainnya
+                $('.nav-item').not(this).removeClass('active');
+                // toggle pada class CSS untuk menampilkan/menyembunyikan menu Home
+                $('.navbar-nav').toggleClass('show-home');
+              });
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+ 
+</body>
+</html>
